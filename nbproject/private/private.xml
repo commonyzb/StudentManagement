@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/Users/apple/NetBeansProjects/JK1StudentApp/src/jk1studentapp/dal/Entity/User.java</file>
+            <file>file:/Users/apple/NetBeansProjects/JK1StudentApp/src/jk1studentapp/gui/StudentJFrame.java</file>
+            <file>file:/Users/apple/NetBeansProjects/JK1StudentApp/src/jk1studentapp/Main.java</file>
+            <file>file:/Users/apple/NetBeansProjects/JK1StudentApp/src/jk1studentapp/gui/LoginJFrame.java</file>
+            <file>file:/Users/apple/NetBeansProjects/JK1StudentApp/src/jk1studentapp/dal/daoimpl/UserDaoImpl.java</file>
+            <file>file:/Users/apple/NetBeansProjects/JK1StudentApp/src/jk1studentapp/dal/dao/UserDao.java</file>
+            <file>file:/Users/apple/NetBeansProjects/JK1StudentApp/src/jk1studentapp/gui/QueryByIDJFrame.java</file>
+            <file>file:/Users/apple/NetBeansProjects/JK1StudentApp/src/jk1studentapp/gui/UpdateJFrame.java</file>
+            <file>file:/Users/apple/NetBeansProjects/JK1StudentApp/src/jk1studentapp/dal/DBUtil.java</file>
+        </group>
+    </open-files>
+</project-private>
