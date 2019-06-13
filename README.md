@@ -2,8 +2,9 @@
 
 ## 简介
 * 开发工具：oracle jdk8,Mac计算机，netbeans8，eclipse
+* 项目其中的很多类可复用，基于此可很快完成一个新的管理系统。
 * 前半段在netbeans上开发的，后面完善是在eclipse，eclipse可完美运行，netbeans应该也可以。
-* 在eclipse显示的代码其实比较乱，netbeans实在是一言难尽，建议不要用netbeans写代码.....
+* 在eclipse显示的代码比在netbeans上显示的代码看起来更乱，netbeans实在是一言难尽，建议不要用netbeans写代码.....
 
 ## 实现的功能
 * 用户登录注册
