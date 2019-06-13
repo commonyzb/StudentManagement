@@ -2,7 +2,8 @@
 
 ## 简介
 * 开发工具：oracle jdk8,Mac计算机，netbeans8，eclipse
-* 前半段在netbeans上开发的，后面完善实在eclipse，eclipse可完美运行。
+* 前半段在netbeans上开发的，后面完善是在eclipse，eclipse可完美运行，netbeans应该也可以。
+* 在eclipse显示的代码其实比较乱，netbeans实在是一言难尽，建议不要用netbeans写代码.....
 
 ## 实现的功能
 * 用户登录注册
