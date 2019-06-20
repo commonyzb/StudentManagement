@@ -9,6 +9,9 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,10 +19,13 @@ import java.util.logging.Logger;
 /**
  *
  * @author aaa
+ * @param <T>
  */
-public class ClassRefect 
+public class ClassRefect<T> 
 {
-    //************获取所有公有的字段********************
+    private static final Comparator MySort = null;
+
+	//************获取所有公有的字段********************
     public static  Field[] getAllPublicAttribute(Object obj)
     {
         Class refClass = obj.getClass();
@@ -49,14 +55,17 @@ public class ClassRefect
         List<Method> getMethods=new ArrayList<>();
         Class refClass = obj.getClass();
         //System.out.println(refClass);
+        String[] row= {"getSid","getSname","getSage","getSaddress","getSnumber","getSphone"};
         Method[] methodArray = refClass.getMethods();
-        for(Method m:methodArray)
-        {
-             if(m.getName().contains("get")){
-             getMethods.add(m);
-             System.out.println(m.getName());
-             }
-        }
+        for(String r:row){
+        	for(Method m:methodArray)
+        	{       	   	
+        		if(m.getName()== r){
+        			getMethods.add(m);
+        			System.out.println(m.getName());
+        		}
+        	}
+        }     
         return getMethods;
     }
     
@@ -83,4 +92,6 @@ public class ClassRefect
             
         }
     }
+   
+   
 }

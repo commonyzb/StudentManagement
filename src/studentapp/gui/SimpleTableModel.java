@@ -8,10 +8,17 @@ package studentapp.gui;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Comparator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.AbstractTableModel;
+
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Collections;
+
+import studentapp.dal.Entity.Student;
 
 /**
  *
@@ -20,7 +27,8 @@ import javax.swing.table.AbstractTableModel;
  */
 public  class SimpleTableModel<T> extends AbstractTableModel
 {
-   protected List<String> cols;
+   private static final Comparator MySort = null;
+protected List<String> cols;
    protected List<T> rows;
 
     public SimpleTableModel(List<String> cols, List<T> rows) {
@@ -65,7 +73,9 @@ public  class SimpleTableModel<T> extends AbstractTableModel
     @Override
     public  Object getValueAt(int rowIndex, int columnIndex) {
        try {
-           List<Method> getMethods=ClassRefect.getAllGetMethod(rows.get(rowIndex));
+           List<Method> getMethods=ClassRefect.getAllGetMethod(rows.get(rowIndex));          
+//             java.util.Collections.sort(getMethods,MySort);       
+ //          getMethods.sort((Comparator<? super Method>) new MySort());
            return getMethods.get(columnIndex).invoke(rows.get(rowIndex), null);
        } catch (IllegalAccessException ex) {
            Logger.getLogger(SimpleTableModel.class.getName()).log(Level.SEVERE, null, ex);
@@ -75,5 +85,42 @@ public  class SimpleTableModel<T> extends AbstractTableModel
            Logger.getLogger(SimpleTableModel.class.getName()).log(Level.SEVERE, null, ex);
        }
        return "";
+    }
+    class MySort implements Comparator<Method>
+    {
+		@Override
+		public int compare(Method o1, Method o2) {
+			// TODO Auto-generated method stub
+			if(o1.getName()=="getSid") {
+				return 1;
+			}
+			else if(o1.getName()=="getSname" && o2.getName()!="getSid") {
+				return 1;
+			}
+			else if(o1.getName()=="getSage" &&(o2.getName()!="getSid"||o2.getName()!="getSname")) {
+				return 1;
+			}
+			else if(o1.getName()=="getSaddress") {
+				if(o2.getName()=="getSnumber"||o2.getName()=="getSphone"){
+					return 1;
+				}
+				else {
+					return -1;
+				}
+			}
+			else if(o1.getName()=="getSnumber") {
+				if(o2.getName()=="getSphone") {
+					return 1;
+				}else {
+					return -1;
+				}
+			}
+			else if(o1.getName()=="getSphone"){
+				return -1;
+			}
+			else {
+				return 0;
+			}			
+		}  	
     }
 }
