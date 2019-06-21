@@ -5,6 +5,7 @@
 * 项目其中的很多类可复用，基于此可很快完成一个新的管理系统。
 * 前半段在netbeans上开发的，后面完善是在eclipse，eclipse可完美运行，netbeans也可以。
 * 2019.6.21 重写了界面，优化了代码，增加了更多提示信息...
+* 界面可以来[博客](https://blog.csdn.net/Just_learn_more/article/details/91867917)看.....
 
 ## 实现的功能
 * 用户登录注册
