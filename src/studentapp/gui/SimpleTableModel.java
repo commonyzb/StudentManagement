@@ -27,8 +27,7 @@ import studentapp.dal.Entity.Student;
  */
 public  class SimpleTableModel<T> extends AbstractTableModel
 {
-   private static final Comparator MySort = null;
-protected List<String> cols;
+   protected List<String> cols;
    protected List<T> rows;
 
     public SimpleTableModel(List<String> cols, List<T> rows) {
@@ -51,9 +50,7 @@ protected List<String> cols;
     public void setRows(List<T> rows) {
         this.rows = rows;
     }
-    
-    
-
+      
     @Override
     public int getRowCount() {
         return rows.size();
@@ -69,13 +66,10 @@ protected List<String> cols;
         return cols.get(column);
     }
     
-
     @Override
     public  Object getValueAt(int rowIndex, int columnIndex) {
        try {
            List<Method> getMethods=ClassRefect.getAllGetMethod(rows.get(rowIndex));          
-//             java.util.Collections.sort(getMethods,MySort);       
- //          getMethods.sort((Comparator<? super Method>) new MySort());
            return getMethods.get(columnIndex).invoke(rows.get(rowIndex), null);
        } catch (IllegalAccessException ex) {
            Logger.getLogger(SimpleTableModel.class.getName()).log(Level.SEVERE, null, ex);
@@ -86,41 +80,5 @@ protected List<String> cols;
        }
        return "";
     }
-    class MySort implements Comparator<Method>
-    {
-		@Override
-		public int compare(Method o1, Method o2) {
-			// TODO Auto-generated method stub
-			if(o1.getName()=="getSid") {
-				return 1;
-			}
-			else if(o1.getName()=="getSname" && o2.getName()!="getSid") {
-				return 1;
-			}
-			else if(o1.getName()=="getSage" &&(o2.getName()!="getSid"||o2.getName()!="getSname")) {
-				return 1;
-			}
-			else if(o1.getName()=="getSaddress") {
-				if(o2.getName()=="getSnumber"||o2.getName()=="getSphone"){
-					return 1;
-				}
-				else {
-					return -1;
-				}
-			}
-			else if(o1.getName()=="getSnumber") {
-				if(o2.getName()=="getSphone") {
-					return 1;
-				}else {
-					return -1;
-				}
-			}
-			else if(o1.getName()=="getSphone"){
-				return -1;
-			}
-			else {
-				return 0;
-			}			
-		}  	
-    }
+    
 }
