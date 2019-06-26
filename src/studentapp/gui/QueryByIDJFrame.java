@@ -118,11 +118,16 @@ public class QueryByIDJFrame extends JFrame {
 			{
 				if(id==rows.get(i).getSid()) index=i;
 			}
-			jTable.changeSelection(index, 0, false, false);
+			if(index==-1) {
+				JOptionPane.showMessageDialog(this, "未找到学生！", "查询学生信息",JOptionPane.WARNING_MESSAGE );
+			}
+			else {
+				jTable.changeSelection(index, 0, false, false);
+			}			
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
-			JOptionPane.showMessageDialog(this, "查询失败！", "查询学生信息",JOptionPane.WARNING_MESSAGE );
+			JOptionPane.showMessageDialog(this, "查询失败！", "查询学生信息",JOptionPane.ERROR_MESSAGE );
 		}
 		
 	}

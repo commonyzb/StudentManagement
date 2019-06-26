@@ -251,7 +251,7 @@ public class StudentJFrame extends JFrame {
 		    JOptionPane.showMessageDialog(this, "删除成功", "删除学生信息", JOptionPane.INFORMATION_MESSAGE);
 		} catch (Exception e) {
 			// TODO: handle exception
-			JOptionPane.showMessageDialog(this, "删除失败！", "删除学生信息", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(this, "删除失败!请选中学生...", "删除学生信息", JOptionPane.ERROR_MESSAGE);
 		}
 	 }
 	 

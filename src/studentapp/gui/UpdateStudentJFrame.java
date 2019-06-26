@@ -48,7 +48,8 @@ public class UpdateStudentJFrame extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public UpdateStudentJFrame() {		
+	public UpdateStudentJFrame() {
+		setTitle("\u66F4\u65B0\u5B66\u751F\u4FE1\u606F");		
 		initComponents();
 	}
 
